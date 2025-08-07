@@ -1,0 +1,59 @@
+# Dataset URLs for PIE-Net Training
+# ===================================
+# 
+# This file contains URLs for datasets commonly used for intrinsic image decomposition.
+# Uncomment the URLs you want to download and run:
+# python download_dataset.py --urls dataset_urls.txt --output ./datasets
+#
+#
+# Download a single dataset
+# python download_dataset.py --url "https://example.com/dataset.zip" --output ./datasets
+
+# Download with custom filename
+# python download_dataset.py --url "https://example.com/data.tar.gz" --output ./datasets --filename "my_dataset.tar.gz"
+
+# Download without extraction
+# python download_dataset.py --url "https://example.com/dataset.zip" --output ./datasets --no-extract
+
+# Resume interrupted download
+# python download_dataset.py --url "https://example.com/dataset.zip" --output ./datasets --resume
+
+# Download multiple files from URL list
+# python download_dataset.py --urls dataset_urls.txt --output ./datasets
+
+# Download with checksum verification
+# python download_dataset.py --url "https://example.com/dataset.zip" --output ./datasets --checksum "abc123..."
+#
+#
+# Note: Some datasets may require registration or have specific license agreements.
+# Please check the dataset's official website before downloading.
+
+# MIT Intrinsic Images Dataset
+# https://www.cs.toronto.edu/~rgrosse/intrinsic/
+
+# NYU Depth V2 (can be used for synthetic intrinsic generation)
+# http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat
+
+# SINTEL Dataset (MPI-Sintel)
+# http://sintel.is.tue.mpg.de/downloads
+
+# IIW (Intrinsic Images in the Wild)
+# http://opensurfaces.cs.cornell.edu/intrinsic/
+
+# Example synthetic dataset URL (replace with actual dataset)
+# https://example.com/synthetic_intrinsic_dataset.zip
+
+# Add your dataset URLs below (one per line):
+# https://your-dataset-url.com/dataset.zip
+# https://another-dataset-url.com/data.tar.gz
+
+# Natural Environment Dataset (NED)
+# http://isis-data.science.uva.nl/hale/neden/intrinsics/0001.zip
+
+# SINTEL Dataset (MPI-Sintel)
+http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip
+
+# MIT Intrinsic Images Dataset
+http://people.csail.mit.edu/rgrosse/intrinsic/intrinsic-data.tar.gz
+
+# IIW (Intrinsic Images in the Wild)
