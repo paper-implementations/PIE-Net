@@ -51,9 +51,19 @@
 # http://isis-data.science.uva.nl/hale/neden/intrinsics/0001.zip
 
 # SINTEL Dataset (MPI-Sintel)
-http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip
+# http://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip
 
 # MIT Intrinsic Images Dataset
-http://people.csail.mit.edu/rgrosse/intrinsic/intrinsic-data.tar.gz
+# http://people.csail.mit.edu/rgrosse/intrinsic/intrinsic-data.tar.gz
 
 # IIW (Intrinsic Images in the Wild)
+#SIGNet
+#https://data.csail.mit.edu/multilum/multi_illumination_train_mip2_jpg.zip
+
+# https://data.csail.mit.edu/multilum/multi_illumination_train_mip2_jpg.zip
+
+https://data.csail.mit.edu/multilum/multi_illumination_test_mip2_jpg.zip
+
+https://1sfu-my.sharepoint.com/personal/ctc32_sfu_ca/_layouts/15/download.aspx?UniqueId=d4a47313%2Dc2b5%2D4782%2D8808%2Dfcd5c5a64963
+
+https://1sfu-my.sharepoint.com/personal/ctc32_sfu_ca/_layouts/15/download.aspx?UniqueId=eb1fd5e7%2Debd4%2D43c2%2D9855%2De1346d9f0aff
