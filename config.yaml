@@ -1,0 +1,46 @@
+# Configuration for Intrinsic Image Decomposition Training
+
+# Dataset Configuration
+datasets:
+  midintrinsics:
+    path: "datasets/MIDIntrinsics"
+    enabled: true
+  mit_intrinsic:
+    path: "datasets/MIT-intrinsic"
+    enabled: true
+  mpi_sintel:
+    path: "datasets/MPI_Sintel"
+    enabled: true
+  ned:
+    path: "datasets/NED"
+    enabled: true
+
+# Training Configuration
+training:
+  image_size: 256
+  batch_size: 8
+  num_workers: 4
+  learning_rate: 1e-4
+  weight_decay: 1e-4
+  lr_step_size: 50
+  lr_gamma: 0.5
+  num_epochs: 100
+
+# Loss Configuration
+loss:
+  lambda_recon: 1.0
+  lambda_albedo: 1.0
+  lambda_shading: 1.0
+  lambda_smoothness: 0.1
+
+# Logging and Output
+output:
+  log_dir: "logs/iid_training"
+  output_dir: "outputs/iid_model"
+  log_interval: 100
+  save_interval: 10
+
+# Debug Configuration
+debug:
+  max_samples_per_dataset: null  # Set to a number for debugging
+  resume_from: null  # Path to checkpoint to resume from
