@@ -209,7 +209,7 @@ def test_dataset_loading():
             }
         },
         'image_size': 256,
-        'batch_size': 4,
+        'batch_size': 6,
         'num_workers': 0,  # Use 0 for debugging
         'derive_shading': True,  # Enable shading derivation
         'max_samples_per_dataset': 5  # Limit for testing
@@ -324,7 +324,7 @@ def test_unified_loading():
             }
         },
         'image_size': 256,
-        'batch_size': 4,
+        'batch_size': 16,
         'num_workers': 0,
         'derive_shading': True,  # Enable shading derivation
         'max_samples_per_dataset': 3  # Limit for testing
@@ -476,16 +476,16 @@ def main():
     output_dir.mkdir(exist_ok=True)
     
     # Test shading derivation specifically
-    # test_shading_derivation()
+    test_shading_derivation()
     
     # Test individual datasets
     test_dataset_loading()
     
     # Test unified dataset
-    # test_unified_loading()
+    test_unified_loading()
     
     # Test data loaders
-    # test_data_loaders()
+    test_data_loaders()
     
     print(f"\n{'='*50}")
     print("All tests completed!")
