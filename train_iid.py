@@ -9,9 +9,7 @@ from tqdm import tqdm
 import time
 from pathlib import Path
 
-from unified_dataset import UnifiedIIDDataset, create_iid_data_loaders
-from Network import DecScaleClampedIllumEdgeGuidedNetworkBatchNorm
-
+from src import *
 
 class IIDLoss(nn.Module):
     """Loss functions for Intrinsic Image Decomposition"""
@@ -86,7 +84,7 @@ class IIDTrainer:
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         
         # Create model
-        self.model = DecScaleClampedIllumEdgeGuidedNetworkBatchNorm().to(self.device)
+        self.model = Network.DecScaleClampedIllumEdgeGuidedNetworkBatchNorm().to(self.device)
         
         # Create loss function
         self.criterion = IIDLoss(
@@ -111,7 +109,7 @@ class IIDTrainer:
         )
         
         # Create data loaders
-        self.train_loader, self.val_loader, self.test_loader = create_iid_data_loaders(config)
+        self.train_loader, self.val_loader, self.test_loader = unified_dataset.create_iid_data_loaders(config)
         
         # Create tensorboard writer
         self.writer = SummaryWriter(config.get('log_dir', 'logs/iid_training'))
