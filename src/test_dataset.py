@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
-from unified_dataset import UnifiedIIDDataset, create_iid_data_loaders, custom_collate_fn
+from .unified_dataset import UnifiedIIDDataset, create_iid_data_loaders, custom_collate_fn
 
 
 def visualize_batch(batch, save_path=None):

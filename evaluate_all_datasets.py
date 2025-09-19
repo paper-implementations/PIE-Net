@@ -6,6 +6,7 @@ Comprehensive evaluation script for PIE-Net model on all validation datasets
 import os
 import sys
 import time
+from datetime import datetime
 import json
 import argparse
 from pathlib import Path
@@ -19,9 +20,9 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 
 # Import our modules
-from Network import DecScaleClampedIllumEdgeGuidedNetworkBatchNorm
-from Utils import mor_utils
-from unified_dataset import UnifiedIIDDataset, create_iid_data_loaders, custom_collate_fn
+from src.Network import DecScaleClampedIllumEdgeGuidedNetworkBatchNorm
+from src.Utils import mor_utils
+from src.unified_dataset import UnifiedIIDDataset, create_iid_data_loaders, custom_collate_fn
 from losses import SSIMLoss, ScaleInvariantMSELoss
 
 torch.backends.cudnn.benchmark = True
@@ -391,6 +392,8 @@ def main():
                        help='Path to trained model checkpoint')
     parser.add_argument('--output_dir', type=str, default='evaluation_results',
                        help='Directory to save results')
+    parser.add_argument('--NoDateTime', action="store_true",
+                        help='Save results with DateTime in the filename')
     parser.add_argument('--device', type=str, default='auto',
                        help='Device to use (auto/cuda/cpu)')
     parser.add_argument('--max_samples', type=int, default=None,
@@ -405,6 +408,8 @@ def main():
     
     # Setup
     device = setup_device(args.device)
+    if not args.NoDateTime:
+        args.output_dir = os.path.join(args.output_dir,datetime.now().strftime('%Y-%m-%d_%H-%M-%S'))
     os.makedirs(args.output_dir, exist_ok=True)
     
     # Load model

@@ -1,0 +1,53 @@
+{
+    "terminal.integrated.profiles.linux": {
+        // run the following command to get the jobid (replace the jobid with the one you get):
+        // salloc -p gpu-dev-1080 -w thorin-1 --gpus 1
+        "Thorin-shell": {
+            "path": "bash",
+            "args": [
+              "-lc",
+              "srun --jobid=701568 --pty bash -l"
+            ]
+          },
+        "Login shell on gandalf": {
+            "path": "/bin/bash",
+            "args": ["-l"]
+          },
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    // Make the Slurm shell the default terminal in this remote
+    // "terminal.integrated.defaultProfile.linux": "Thorin-shell",
+
+    // Keep long logs visible while training
+    "terminal.integrated.scrollback": 200000,
+
+    // Improve responsiveness over high latency SSH
+    "terminal.integrated.localEchoEnabled": "auto",
+    "terminal.integrated.localEchoLatencyThreshold": 40,
+
+    // Helpful command decorations and link detection
+    "terminal.integrated.shellIntegration.enabled": true,
+
+    // Safety when pasting multi-line commands
+    "terminal.integrated.enableMultiLinePasteWarning": true,
+
+    // Ensure locale variables are set in the remote shell
+    "terminal.integrated.setLocaleVariables": true,
+}

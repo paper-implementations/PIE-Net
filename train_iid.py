@@ -11,6 +11,8 @@ from pathlib import Path
 
 from src import *
 
+torch.backends.cudnn.benchmark = True
+
 class IIDLoss(nn.Module):
     """Loss functions for Intrinsic Image Decomposition"""
     

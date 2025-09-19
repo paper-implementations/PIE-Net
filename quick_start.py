@@ -5,8 +5,7 @@ Demonstrates how to use the unified dataset with the DecScaleClampedIllumEdgeGui
 """
 
 import torch
-from unified_dataset import create_iid_data_loaders
-from Network import DecScaleClampedIllumEdgeGuidedNetworkBatchNorm
+from src import *
 from train_iid import IIDLoss, IIDTrainer
 
 
@@ -55,7 +54,7 @@ def main():
     print("📊 Creating data loaders...")
     
     # Create data loaders
-    train_loader, val_loader, test_loader = create_iid_data_loaders(config)
+    train_loader, val_loader, test_loader = unified_dataset.create_iid_data_loaders(config)
     
     print(f"✅ Training samples: {len(train_loader.dataset)}")
     print(f"✅ Validation samples: {len(val_loader.dataset)}")
@@ -75,7 +74,7 @@ def main():
     
     # Create model
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model = DecScaleClampedIllumEdgeGuidedNetworkBatchNorm().to(device)
+    model = Network.DecScaleClampedIllumEdgeGuidedNetworkBatchNorm().to(device)
     
     print(f"✅ Model created on {device}")
     print(f"✅ Model parameters: {sum(p.numel() for p in model.parameters()):,}")

@@ -61,6 +61,26 @@ python inference.py --model outputs/iid_model/best_model.pth --input test_image.
 python inference.py --model outputs/iid_model/best_model.pth --input test_images/ --visualize --save_components
 ```
 
+### 5. **Evaluate the Model**
+```bash
+# Evaluate the model on all datasets
+python evaluate_all_datasets.py
+
+# Evaluate the model on a specific dataset
+python evaluate_all_datasets.py --dataset midintrinsics
+
+# Evaluate the model on a specific dataset with a specific model
+python evaluate_all_datasets.py --dataset midintrinsics --model outputs/iid_model/best_model.pth
+
+
+# Evaluate the model on a specific dataset with a specific model
+python evaluate_all_datasets.py --dataset midintrinsics --model outputs/iid_model/best_model.pth
+
+
+# Evaluate the model on a specific dataset with a specific model
+python evaluate_all_datasets.py --dataset midintrinsics --model outputs/iid_model/best_model.pth
+```
+
 ## 🏗️ **Architecture Overview**
 
 ### **Core Components**
@@ -198,3 +218,19 @@ PIE-Net/
 - ✅ **Inference pipeline ready**
 - ✅ **Visualization tools working**
 - ✅ **Documentation complete**
+
+
+## Lighting conditions:
+```bash
+# Basic usage with default 5 lighting positions
+python evaluate_light_change.py
+
+# Custom number of lighting positions
+python evaluate_light_change.py --lighting_positions 8
+
+# Evaluate specific datasets
+python evaluate_light_change.py --datasets midintrinsics mit_intrinsic
+
+# Limit number of samples for quick testing
+python evaluate_light_change.py --max_samples 10 --lighting_positions 3
+```
